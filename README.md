@@ -6,7 +6,7 @@
 
 ```shell
 yum -y install wget &&
-wget -N --no-check-certificate https://raw.githubusercontent.com/lizhongnian/ss-panel-v3-mod-node-connect/master/ss-panel-v3-mod-node-connect.sh &&
+wget -N --no-check-certificate https://raw.githubusercontent.com/zmou/ss-panel-v3-mod-node-connect/master/ss-panel-v3-mod-node-connect.sh &&
 chmod +x ss-panel-v3-mod-node-connect.sh &&
 bash ss-panel-v3-mod-node-connect.sh
 ```
