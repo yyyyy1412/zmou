@@ -1,4 +1,4 @@
-# ss-panel-v3-mod节点对接一键脚本，支持webapi和数据库对接
+# ss-panel-v3-mod节点对接一键脚本
 
 
 ## 使用方法
