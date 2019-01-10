@@ -197,7 +197,7 @@ install_node(){
 	install_ssr_for_each
 	cd /root/shadowsocks
 	echo -e "modify Config.py...\n"
-	sed -i "#'cn.bing.com'#" /root/shadowsocks/userapiconfig.py
+	sed -i "s#'cn.bing.cn'#'cn.bing.com'#" /root/shadowsocks/userapiconfig.py
 	Userdomain=${Userdomain:-"http://127.0.0.1"}
 	sed -i "s#https://cn.bing.com#${Userdomain}#" /root/shadowsocks/userapiconfig.py
 	Usermukey=${Usermukey:-"mupass"}
@@ -272,7 +272,7 @@ install_node_db(){
 	cd /root/shadowsocks
 	echo -e "modify Config.py...\n"
 	sed -i "s#'modwebapi'#'glzjinmod'#" /root/shadowsocks/userapiconfig.py #改成数据库对接
-	sed -i "s#'zhaoj.in'#'jd.hk'#" /root/shadowsocks/userapiconfig.py #混淆设置
+	sed -i "s#'cn.bing.cn'#'cn.bing.com'#" /root/shadowsocks/userapiconfig.py #混淆设置
 	MYSQL_HOST=${MYSQL_HOST:-"http://127.0.0.1"}
 	sed -i "s#MYSQL_HOST = '127.0.0.1'#MYSQL_HOST = '${MYSQL_HOST}'#" /root/shadowsocks/userapiconfig.py
 	MYSQL_DB=${MYSQL_DB:-"root"}
