@@ -197,9 +197,9 @@ install_node(){
 	install_ssr_for_each
 	cd /root/shadowsocks
 	echo -e "modify Config.py...\n"
-	sed -i "s#'cn.bing.cn'#'cn.bing.com'#" /root/shadowsocks/userapiconfig.py
+	sed -i "s#'zhaoj.in'#'jd.hk'#" /root/shadowsocks/userapiconfig.py
 	Userdomain=${Userdomain:-"http://127.0.0.1"}
-	sed -i "s#https://cn.bing.com#${Userdomain}#" /root/shadowsocks/userapiconfig.py
+	sed -i "s#https://zhaoj.in#${Userdomain}#" /root/shadowsocks/userapiconfig.py
 	Usermukey=${Usermukey:-"mupass"}
 	sed -i "s#glzjin#${Usermukey}#" /root/shadowsocks/userapiconfig.py
 	UserNODE_ID=${UserNODE_ID:-"3"}
@@ -272,7 +272,7 @@ install_node_db(){
 	cd /root/shadowsocks
 	echo -e "modify Config.py...\n"
 	sed -i "s#'modwebapi'#'glzjinmod'#" /root/shadowsocks/userapiconfig.py #改成数据库对接
-	sed -i "s#'cn.bing.cn'#'cn.bing.com'#" /root/shadowsocks/userapiconfig.py #混淆设置
+	sed -i "s#'zhaoj.in'#'jd.hk'" /root/shadowsocks/userapiconfig.py #混淆设置
 	MYSQL_HOST=${MYSQL_HOST:-"http://127.0.0.1"}
 	sed -i "s#MYSQL_HOST = '127.0.0.1'#MYSQL_HOST = '${MYSQL_HOST}'#" /root/shadowsocks/userapiconfig.py
 	MYSQL_DB=${MYSQL_DB:-"root"}
@@ -308,7 +308,6 @@ echo
 echo "########################################################################"
 echo "# ss-panel-v3-mod一键对接自用版                                          "
 echo "# 自用维护版，仅限个人                                                    "
-echo "# 默认混淆参数为：'cn.bing.com'                                           "
 echo "# 请输入1或2选择对接方式                                                  "
 echo "# 1  API对接!                                                           "
 echo "# 2  SQL对接!                                                           "
