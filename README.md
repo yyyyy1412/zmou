@@ -7,5 +7,5 @@ yum -y install wget && wget -N --no-check-certificate https://raw.githubusercont
 
 ## NimaQ版
 ```shell
-yum -y install wget && wget -N --no-check-certificate https://raw.githubusercontent.com/yyyyy1412/zmou/master/ssnew.sh && chmod +x ssnew && bash ssnew
+yum -y install wget && wget -N --no-check-certificate https://raw.githubusercontent.com/yyyyy1412/zmou/master/ssnew.sh && chmod +x ssnew && bash ssnew.sh
 ```
