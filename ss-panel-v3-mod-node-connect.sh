@@ -11,7 +11,7 @@ Libtest(){
 	echo "$LIB_PING $LIB" >> ping.pl
 	libAddr=`sort -V ping.pl|sed -n '1p'|awk '{print $2}'`
 	if [ "$libAddr" == "$GIT" ];then
-		libAddr='https://raw.githubusercontent.com/lizhongnian/ss-panel-v3-mod-node-connect/master/libsodium-1.0.13.tar.gz'
+		libAddr='https://raw.githubusercontent.com/yyyyy1412/zmou/master/libsodium-1.0.13.tar.gz'
 	else
 		libAddr='https://download.libsodium.org/libsodium/releases/libsodium-1.0.13.tar.gz'
 	fi
@@ -98,7 +98,7 @@ install_centos_ssr(){
 	./configure && make -j2 && make install
 	echo /usr/local/lib > /etc/ld.so.conf.d/usr_local_lib.conf
 	ldconfig
-	git clone -b master https://github.com/lizhongnian/shadowsocks.git "/root/shadowsocks"
+	git clone -b master https://github.com/yyyyy1412/shadowsocks.git "/root/shadowsocks"
 	cd /root/shadowsocks
 	chkconfig supervisord on
 	#第一次安装
@@ -111,7 +111,7 @@ install_centos_ssr(){
 	#第三次检测是否成功
 	if [ -z "`python -c 'import requests;print(requests)'`" ]; then
 		mkdir python && cd python
-		git clone https://github.com/lizhongnian/urllib3.git && cd urllib3
+		git clone https://github.com/yyyyy1412/urllib3.git && cd urllib3
 		python setup.py install && cd ..
 		git clone https://github.com/nakagami/CyMySQL.git && cd CyMySQL
 		python setup.py install && cd ..
@@ -145,7 +145,7 @@ install_ubuntu_ssr(){
 	apt-get install python-pip git -y
 	pip install cymysql
 	cd /root
-	git clone -b master https://github.com/lizhongnian/shadowsocks.git "/root/shadowsocks"
+	git clone -b master https://github.com/yyyyy1412/shadowsocks.git "/root/shadowsocks"
 	cd shadowsocks
 	pip install -r requirements.txt
 	chmod +x *.sh
@@ -157,10 +157,8 @@ install_node(){
 	clear
 	echo
 	echo "#########################################################################"
-	echo "# One click Install Shadowsocks-Python-Manyuser                         "
-	echo "# Github: https://github.com/lizhongnian/ss-panel-v3-mod-node-connect   "
-	echo "# Author: 7colorblog                                                    "
-	echo "# blog: https://www.7colorblog.com                                      "	
+	echo "# ss-panel-v3-mod一键对接自用版                         "
+	echo "# 自用维护版，仅限个人                                      "	
 	echo "#########################################################################"
 	echo
 	#Check Root
@@ -193,9 +191,9 @@ install_node(){
 	}
 	# 取消文件数量限制
 	sed -i '$a * hard nofile 512000\n* soft nofile 512000' /etc/security/limits.conf
-	read -p "请输入面板的域名或ip(例如:https://www.7colorblog.com or http://114.114.114.114): " Userdomain
-	read -p "请输入面板的muKey(例如:mupass): " Usermukey
-	read -p "请输入面板的节点id(例如:7): " UserNODE_ID
+	read -p "对接地址: " Userdomain
+	read -p "对接key: " Usermukey
+	read -p "节点id: " UserNODE_ID
 	install_ssr_for_each
 	cd /root/shadowsocks
 	echo -e "modify Config.py...\n"
@@ -210,7 +208,7 @@ install_node(){
 	# 启用supervisord
 	supervisorctl shutdown
 	#某些机器没有echo_supervisord_conf 
-	wget -N -P  /etc/ --no-check-certificate  https://raw.githubusercontent.com/lizhongnian/ss-panel-v3-mod-node-connect/master/supervisord.conf
+	wget -N -P  /etc/ --no-check-certificate  https://raw.githubusercontent.com/yyyyy1412/zmou/master/supervisord.conf
 	supervisord
 	#iptables
 	iptables -F
@@ -224,9 +222,6 @@ install_node(){
 	chmod +x /etc/rc.d/rc.local
 	echo "#########################################################################"
 	echo "# 安装完成，节点即将重启使配置生效                                      "
-	echo "# Github: https://github.com/lizhongnian/ss-panel-v3-mod-node-connect   "
-	echo "# Author: 7colorblog                                                    "
-	echo "# blog: https://www.7colorblog.com                                      "	
 	echo "#########################################################################"
 	reboot now
 }
@@ -234,10 +229,8 @@ install_node_db(){
 	clear
 	echo
 	echo "#########################################################################"
-	echo "# One click Install Shadowsocks-Python-Manyuser                         "
-	echo "# Github: https://github.com/lizhongnian/ss-panel-v3-mod-node-connect   "
-	echo "# Author: 7colorblog                                                    "
-	echo "# blog: https://www.7colorblog.com                                      "	
+	echo "# ss-panel-v3-mod一键对接自用版                         "
+	echo "# 自用维护版，仅限个人                                      "
 	echo "#########################################################################"
 	echo
 	#Check Root
@@ -270,11 +263,11 @@ install_node_db(){
 	}
 	# 取消文件数量限制
 	sed -i '$a * hard nofile 512000\n* soft nofile 512000' /etc/security/limits.conf
-	read -p "请输入面板数据库地址: " MYSQL_HOST
-	read -p "请输入面板数据库库名: " MYSQL_DB 
-	read -p "请输入面板数据库用户名: " MYSQL_USER 
-	read -p "请输入面板数据库密码: " MYSQL_PASS 
-	read -p "请输入面板的节点ID(like:7): " UserNODE_ID
+	read -p "数据库地址: " MYSQL_HOST
+	read -p "数据库库名: " MYSQL_DB 
+	read -p "数据库用户名: " MYSQL_USER 
+	read -p "数据库密码: " MYSQL_PASS 
+	read -p "节点ID: " UserNODE_ID
 	install_ssr_for_each
 	cd /root/shadowsocks
 	echo -e "modify Config.py...\n"
@@ -294,7 +287,7 @@ install_node_db(){
 	# 启用supervisord
 	supervisorctl shutdown
 	#某些机器没有echo_supervisord_conf 
-	wget -N -P  /etc/ --no-check-certificate  https://raw.githubusercontent.com/lizhongnian/ss-panel-v3-mod-node-connect/master/supervisord.conf
+	wget -N -P  /etc/ --no-check-certificate  https://raw.githubusercontent.com/yyyyy1412/zmou/master/supervisord.conf
 	supervisord
 	#iptables
 	iptables -F
@@ -308,21 +301,16 @@ install_node_db(){
 	chmod +x /etc/rc.d/rc.local
 	echo "#########################################################################"
 	echo "# 安装完成，节点即将重启使配置生效                                      "
-	echo "# Github: https://github.com/lizhongnian/ss-panel-v3-mod-node-connect   "
-	echo "# Author: 7colorblog                                                    "
-	echo "# blog: https://www.7colorblog.com                                      "
 	echo "#########################################################################"
 	reboot now
 }
 echo
 echo "########################################################################"
-echo "# ss-panel-v3-mod后端对接一键脚本                     				 "
-echo "# Github: https://github.com/lizhongnian/ss-panel-v3-mod-node-connect  "
-echo "# Author: 7colorblog                                                   "
-echo "# blog: https://www.7colorblog.com                                     "
+echo "# ss-panel-v3-mod一键对接自用版                         "
+echo "# 自用维护版，仅限个人                                      "
 echo "# 请输入1或2选择对接方式                                               "
-echo "# 1  webapi对接选这个!                                                 "
-echo "# 2  db数据库对接选这个!                                               "
+echo "# 1  API对接!                                                 "
+echo "# 2  SQL对接!                                               "
 echo "########################################################################"
 echo
 num=$1
