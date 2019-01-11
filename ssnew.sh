@@ -1,6 +1,6 @@
 #!/bin/bash
 #Check Root
-[ $(id -u) != "0" ] && { echo "Error: 必须使用root用户执行此脚本！"; exit 1; }
+[ $(id -u) != "0" ] && { echo "Error: 请必须使用root用户执行此脚本！"; exit 1; }
 Libtest(){
 	#自动选择下载节点
 	GIT='raw.githubusercontent.com'
