@@ -6,6 +6,17 @@ chmod +x tcp.sh
 ./tcp.sh
 }
 
+GET_SERVER_IP(){
+	if [ ! -f /root/.ip.txt ];then
+		curl -s 'https://myip.ipip.net' > /root/.ip.txt
+		Number_of_file_characters=`cat .ip.txt | wc -L`
+		if [ ${Number_of_file_characters} -gt '100' ];then
+			curl -s 'http://ip.cn' > /root/.ip.txt
+		fi
+	fi
+	SERVER_IP_INFO=`sed -n '1p' /root/.ip.txt`
+}
+
 INSTALL(){
 	bash ssr.sh
 }
