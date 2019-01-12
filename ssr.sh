@@ -58,12 +58,12 @@ INSTALL
 GET_SERVER_IP
 
 echo "####################################################################
-# 个人定制版                                                       #
+# 阿 明 个 人 定 制 版                                              #
 ####################################################################
 # [1] [安装BBR锐速合集版-94ish.me]                                  #
 # [2] [待定.]                                                      #
 ####################################################################
-# [x]重新加载 [y]更新脚本 [z]删除脚本 [about]关于脚本              #
+# [A]重新加载 [B]更新脚本 [C]删除脚本 [D]关于脚本                    #
 # ${SERVER_IP_INFO}
 ####################################################################"
 read -p "PLEASE SELECT OPTIONS:" SSR_OPTIONS
@@ -71,13 +71,13 @@ read -p "PLEASE SELECT OPTIONS:" SSR_OPTIONS
 clear;case "${SSR_OPTIONS}" in
 	1)
 	Install_BBR;;
-	x)
+	A)
 	/usr/bin/ssr;;
-	y)
+	B)
 	REINSTALL;;
-	z)
+	C)
 	UNINSTALL;;
-	about)
+	D)
 	cat /root/tools/about.txt;;
 	node)
 	GET_NODE_SH_FILE;;
