@@ -6,15 +6,8 @@ chmod +x tcp.sh
 ./tcp.sh
 }
 
-GET_SERVER_IP(){
-	if [ ! -f /root/.ip.txt ];then
-		curl -s 'https://myip.ipip.net' > /root/.ip.txt
-		Number_of_file_characters=`cat .ip.txt | wc -L`
-		if [ ${Number_of_file_characters} -gt '100' ];then
-			curl -s 'http://ip.cn' > /root/.ip.txt
-		fi
-	fi
-	SERVER_IP_INFO=`sed -n '1p' /root/.ip.txt`
+INSTALL(){
+	bash ssr.sh
 }
 
 UNINSTALL(){
@@ -24,6 +17,7 @@ UNINSTALL(){
 
 REINSTALL(){
 	UNINSTALL
+	INSTALL
 	UPDATE_SHADOWSOCKS_COMMAND
 	clear;echo "REINSTALL DONE,Meet Again."
 }
@@ -36,6 +30,7 @@ GET_NODE_SH_FILE(){
 	fi
 }
 
+INSTALL
 GET_SERVER_IP
 
 echo "####################################################################
@@ -44,7 +39,7 @@ echo "####################################################################
 # [1] [安装BBR锐速合集版-94ish.me]                                  #
 # [2] [待定.]                                                      #
 ####################################################################
-# [a]更新脚本 [b]删除脚本 [c]关于脚本                               #
+# [z]重新加载 [x]更新脚本 [c]删除脚本 [v]关于脚本                    #
 # ${SERVER_IP_INFO}
 ####################################################################"
 read -p "PLEASE SELECT OPTIONS:" SSR_OPTIONS
@@ -52,11 +47,13 @@ read -p "PLEASE SELECT OPTIONS:" SSR_OPTIONS
 clear;case "${SSR_OPTIONS}" in
 	1)
 	Install_BBR;;
-	a)
+	z)
+	/usr/bin/ssr;;
+	x)
 	REINSTALL;;
-	b)
-	UNINSTALL;;
 	c)
+	UNINSTALL;;
+	v)
 	cat /root/tools/about.txt;;
 	node)
 	GET_NODE_SH_FILE;;
