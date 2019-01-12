@@ -6,6 +6,10 @@ chmod +x tcp.sh
 ./tcp.sh
 }
 
+Installation_Of_Pure_System(){
+	bash /root/tools/reinstall.sh
+}
+
 GET_SERVER_IP(){
 	if [ ! -f /root/.ip.txt ];then
 		curl -s 'https://myip.ipip.net' > /root/.ip.txt
@@ -15,10 +19,6 @@ GET_SERVER_IP(){
 		fi
 	fi
 	SERVER_IP_INFO=`sed -n '1p' /root/.ip.txt`
-}
-
-INSTALL(){
-	bash ssr.sh
 }
 
 UNINSTALL(){
