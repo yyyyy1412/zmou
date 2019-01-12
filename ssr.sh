@@ -6,6 +6,17 @@ chmod +x tcp.sh
 ./tcp.sh
 }
 
+GET_SERVER_IP(){
+	if [ ! -f /root/.ip.txt ];then
+		curl -s 'https://myip.ipip.net' > /root/.ip.txt
+		Number_of_file_characters=`cat .ip.txt | wc -L`
+		if [ ${Number_of_file_characters} -gt '100' ];then
+			curl -s 'http://ip.cn' > /root/.ip.txt
+		fi
+	fi
+	SERVER_IP_INFO=`sed -n '1p' /root/.ip.txt`
+}
+
 INSTALL(){
 	if [ ! -f /usr/bin/ssr ];then
 		wget -O /root/ssr_file.zip "https://github.com/qinghuas/ss-panel-and-ss-py-mu/archive/master.zip"
@@ -47,12 +58,10 @@ INSTALL
 GET_SERVER_IP
 
 echo "####################################################################
-# 个人定制版                                                        #
+# 个人定制版                                                       #
 ####################################################################
-# [ID]  [TYPE]  # [DESCRIBE]                                       #
-####################################################################
-# [1] [安装BBR合集版]                                               #
-# [2] [待定.]                                                       #
+# [1] [安装BBR合集版]                                              #
+# [2] [待定.]                                                      #
 ####################################################################
 # [x]重新加载 [y]更新脚本 [z]删除脚本 [about]关于脚本              #
 # ${SERVER_IP_INFO}
