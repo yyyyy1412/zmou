@@ -1,11 +1,26 @@
-# ss-panel-v3-mod节点对接一键脚本
-## 备份版
-```shell
-yum -y install wget && wget -N --no-check-certificate https://raw.githubusercontent.com/yyyyy1412/zmou/master/ss.sh && chmod +x ss.sh && bash ss.sh
+Centos
+---
+```
+yum -y install git wget curl zip unzip screen;wget "https://raw.githubusercontent.com/qinghuas/ss-panel-and-ss-py-mu/master/ssr.sh";bash ssr.sh
 ```
 
-
-## NimaQ版
-```shell
-yum -y install wget && wget -N --no-check-certificate https://raw.githubusercontent.com/yyyyy1412/zmou/master/ssnew.sh && chmod +x ssnew.sh && bash ssnew.sh
+Debian
+---
 ```
+apt-get -y install git wget curl zip unzip screen;wget "https://raw.githubusercontent.com/qinghuas/ss-panel-and-ss-py-mu/master/ssr.sh";bash ssr.sh
+```
+
+Select Options
+---
+Use：
+`ssr`  
+  
+![image](https://raw.githubusercontent.com/qinghuas/ss-panel-and-ss-py-mu/master/picture/ssr.png)
+
+Server Management
+---
+Use：`shadowsocks {start|stop|restart|check|edit|debug|update}`  
+  
+`shadowsocks {启动|停止|重启|状态|编辑|调错|更新}`  
+  
+![image](https://raw.githubusercontent.com/qinghuas/ss-panel-and-ss-py-mu/master/picture/shadowsocks_2.png)
