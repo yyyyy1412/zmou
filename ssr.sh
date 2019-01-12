@@ -47,23 +47,12 @@ INSTALL
 GET_SERVER_IP
 
 echo "####################################################################
-# GitHub  #  https://github.com/mmmwhy/ss-panel-and-ss-py-mu       #
-# GitHub  #  https://github.com/qinghuas/ss-panel-and-ss-py-mu     #
-# Edition #  V.3.1.6 2017-12-13                                    #
-# From    #  @mmmwhy @qinghuas                                     #
+# 个人定制版                                                        #
 ####################################################################
 # [ID]  [TYPE]  # [DESCRIBE]                                       #
 ####################################################################
-# [1] [Install] # [LNMP] AND [SS PANEL V3]                         #
-# [2] [Install] # [SS NODE] AND [BBR]                              #
-# [3] [Change]  # [SS NODE INOF]                                   #
-# [4] [Install] # [SS NODE]                                        #
-# [5] [Install] # [BBR]                                            #
-####################################################################
-# [a]检查BBR状态 [b]安装/执行路由追踪 [c]Speedtest/UnixBench/bench #
-# [d]更换镜像源 [e]安装/检查 Fail2ban [f]安装/执行 安全狗          #   
-# [g]卸载阿里云云盾 [h]安装/卸载 锐速 [i]Nginx 管理脚本            #
-# [j]安装纯净系统 [k]安装Aria2 [l]安装Server Status [m]安装Socks5  #
+# [1] [安装BBR合集版]                                               #
+# [2] [待定.]                                                       #
 ####################################################################
 # [x]重新加载 [y]更新脚本 [z]删除脚本 [about]关于脚本              #
 # ${SERVER_IP_INFO}
@@ -72,42 +61,7 @@ read -p "PLEASE SELECT OPTIONS:" SSR_OPTIONS
 
 clear;case "${SSR_OPTIONS}" in
 	1)
-	Install_the_front;;
-	2)
-	Install_ss_node
 	Install_BBR;;
-	3)
-	Edit_ss_node_info;;
-	4)
-	Install_ss_node;;
-	5)
-	Install_BBR;;
-	a)
-	Check_BBR_installation_status;;
-	b)
-	Routing_track;;
-	c)
-	Run_Speedtest_And_Bench_sh;;
-	d)
-	Change_System_Source;;
-	e)
-	Install_fail2ban;;
-	f)
-	Install_Safe_Dog;;
-	g)
-	Uninstall_ali_cloud_shield;;
-	h)
-	Install_Serverspeeder;;
-	i)
-	Nginx_Administration_Script;;
-	j)
-	Installation_Of_Pure_System;;
-	k)
-	Install_Aria2;;
-	l)
-	Install_Server_Status;;
-	m)
-	Install_Socks5;;
 	x)
 	/usr/bin/ssr;;
 	y)
