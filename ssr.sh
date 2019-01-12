@@ -17,16 +17,6 @@ GET_SERVER_IP(){
 	SERVER_IP_INFO=`sed -n '1p' /root/.ip.txt`
 }
 
-INSTALL(){
-	if [ ! -f /usr/bin/ssr ];then
-		wget -O /root/ssr_file.zip "https://github.com/yyyyy1412/zmou/archive/master.zip"
-		unzip /root/ssr_file.zip -d /root;mv /root/ss-panel-and-ss-py-mu-master/* /root
-		cp /root/ssr.sh /usr/bin/ssr;chmod 777 /usr/bin/ssr
-		rm -rf ssr_file.zip /root/ss-panel-and-ss-py-mu-master /root/picture /root/README.md /root/ssr.sh
-		clear;echo "INSTALL DONE,Hellow.";sleep 1
-	fi
-}
-
 UNINSTALL(){
 	rm -rf /usr/bin/ssr /root/tools /root/node /root/.ip.txt
 	clear;echo "UNINSTALL DONE,Bye."
