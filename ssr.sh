@@ -44,7 +44,7 @@ echo "####################################################################
 # [1] [安装BBR锐速合集版-94ish.me]                                  #
 # [2] [待定.]                                                      #
 ####################################################################
-# [A]重新加载 [B]更新脚本 [C]删除脚本 [D]关于脚本                    #
+# [a]更新脚本 [b]删除脚本 [c]关于脚本                               #
 # ${SERVER_IP_INFO}
 ####################################################################"
 read -p "PLEASE SELECT OPTIONS:" SSR_OPTIONS
@@ -53,12 +53,10 @@ clear;case "${SSR_OPTIONS}" in
 	1)
 	Install_BBR;;
 	a)
-	/usr/bin/ssr;;
-	b)
 	REINSTALL;;
-	c)
+	b)
 	UNINSTALL;;
-	d)
+	c)
 	cat /root/tools/about.txt;;
 	node)
 	GET_NODE_SH_FILE;;
