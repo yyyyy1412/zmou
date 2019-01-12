@@ -24,7 +24,6 @@ UNINSTALL(){
 
 REINSTALL(){
 	UNINSTALL
-	INSTALL
 	UPDATE_SHADOWSOCKS_COMMAND
 	clear;echo "REINSTALL DONE,Meet Again."
 }
@@ -53,13 +52,13 @@ read -p "PLEASE SELECT OPTIONS:" SSR_OPTIONS
 clear;case "${SSR_OPTIONS}" in
 	1)
 	Install_BBR;;
-	A)
+	a)
 	/usr/bin/ssr;;
-	B)
+	b)
 	REINSTALL;;
-	C)
+	c)
 	UNINSTALL;;
-	D)
+	d)
 	cat /root/tools/about.txt;;
 	node)
 	GET_NODE_SH_FILE;;
