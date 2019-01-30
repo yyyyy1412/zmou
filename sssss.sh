@@ -1,5 +1,13 @@
 #!/bin/bash
 
+Install_v2ray(){
+	bash <(curl -s -L https://git.io/v2ray.sh)
+}
+
+Install_ssr(){
+	wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/ssrmu.sh && chmod +x ssrmu.sh && bash ssrmu.sh
+}
+
 Install_bbr_1(){
 	wget -N --no-check-certificate "https://raw.githubusercontent.com/chiakge/Linux-NetSpeed/master/tcp.sh"
 chmod +x tcp.sh
@@ -12,14 +20,6 @@ Install_ss1_node(){
 
 Install_ss2_node(){
 	yum -y install wget && wget -N --no-check-certificate https://raw.githubusercontent.com/yyyyy1412/zmou/master/ss.sh && chmod +x ss.sh && bash ss.sh
-}
-
-Routing_track(){
-	bash /root/traceroute.sh
-}
-
-Run_Speedtest(){
-	wget -qO- bench.sh | bash
 }
 
 Edit_ss_node_info(){
@@ -44,6 +44,14 @@ Edit_ss_node_info(){
 	echo "新设置已生效."
 }
 
+Routing_track(){
+	bash /root/traceroute.sh
+}
+
+Run_Speedtest(){
+	wget -qO- bench.sh | bash
+}
+
 Install_System(){
 	bash /root/reinstall.sh
 }
@@ -64,46 +72,12 @@ GET_SERVER_IP(){
 	SERVER_IP_INFO=`sed -n '1p' /root/.ip.txt`
 }
 
-INSTALL(){
-	if [ ! -f /usr/bin/ssr ];then
-		bash sssss.sh
-	fi
-}
-
-UNINSTALL(){
-	rm -rf /usr/bin/ssr /root/tools /root/node /root/.ip.txt
-	clear;echo "UNINSTALL DONE,Bye."
-}
-
-REINSTALL(){
-	UNINSTALL
-	INSTALL
-	UPDATE_SHADOWSOCKS_COMMAND
-	clear;echo "REINSTALL DONE,Meet Again."
-}
-
 GET_NODE_SH_FILE(){
 	if [ ! -f /root/node.sh ];then
 		wget "https://dl.52ll.org/node.sh";chmod 777 node.sh
 	else
 		echo "node.sh 已存在."
 	fi
-}
-
-GET_NODE_SH_FILE(){
-	if [ ! -f /root/node.sh ];then
-		wget "https://dl.52ll.org/node.sh";chmod 777 node.sh
-	else
-		echo "node.sh 已存在."
-	fi
-}
-
-Install_v2ray(){
-	bash <(curl -s -L https://git.io/v2ray.sh)
-}
-
-Install_ssr(){
-	wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/ssrmu.sh && chmod +x ssrmu.sh && bash ssrmu.sh
 }
 
 INSTALL
