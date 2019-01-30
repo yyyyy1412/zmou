@@ -125,8 +125,8 @@ clear;case "${SSR_OPTIONS}" in
 	node)
 	GET_NODE_SH_FILE;;
 	*)
-	echo "选项不在范围内,2s后将重新加载,请注意选择...";bash sssss.sh
-	INSTALL;;
+	echo "选项不在范围内,2s后将重新加载,请注意选择...";
+	bash sssss.sh;;
 esac
 
 #END 2018-01-02 13:24
