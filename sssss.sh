@@ -65,8 +65,13 @@ GET_SERVER_IP(){
 }
 
 INSTALL(){
-	yum -y install wget && wget -N --no-check-certificate https://raw.githubusercontent.com/yyyyy1412/zmou/master/sssss.sh && chmod +x sssss.sh && bash sssss.sh
-}
+	if [ ! -f /usr/bin/ssr ];then
+		wget -O /root/ssr_file.zip "https://github.com/yyyyy1412/zmou/archive/master.zip"
+		unzip /root/ssr_file.zip -d /root;mv /root/zmou-master/* /root
+		cp /root/ssr.sh /usr/bin/ssr;chmod 777 /usr/bin/ssr
+		rm -rf ssr_file.zip /root/zmou-master /root/picture /root/README.md /root/ssr.sh
+		clear;echo "INSTALL DONE,Hellow.";sleep 1
+	fi}
 
 UNINSTALL(){
 	rm -rf /usr/bin/ssr /root
