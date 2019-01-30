@@ -45,7 +45,7 @@ Edit_ss_node_info(){
 }
 
 Routing_track(){
-	bash /root/traceroute.sh
+	wget -N --no-check-certificate https://raw.githubusercontent.com/yyyyy1412/zmou/master/traceroute.sh && chmod +x traceroute.sh && bash traceroute.sh
 }
 
 Run_Speedtest(){
@@ -53,7 +53,7 @@ Run_Speedtest(){
 }
 
 Install_System(){
-	bash /root/reinstall.sh
+	wget -N --no-check-certificate https://raw.githubusercontent.com/yyyyy1412/zmou/master/reinstall.sh && chmod +x reinstall.sh && bash reinstall.sh
 }
 
 Install_sshpor(){
