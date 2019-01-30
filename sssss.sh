@@ -64,17 +64,9 @@ GET_SERVER_IP(){
 	SERVER_IP_INFO=`sed -n '1p' /root/.ip.txt`
 }
 
-GET_NODE_SH_FILE(){
-	if [ ! -f /root/node.sh ];then
-		wget "https://dl.52ll.org/node.sh";chmod 777 node.sh
-	else
-		echo "node.sh 已存在."
-	fi
-}
-
 INSTALL(){
 	if [ ! -f /usr/bin/ssr ];then
-		bash sssss.sh
+		bash ssr.sh
 	fi
 }
 
@@ -90,6 +82,21 @@ REINSTALL(){
 	clear;echo "REINSTALL DONE,Meet Again."
 }
 
+GET_NODE_SH_FILE(){
+	if [ ! -f /root/node.sh ];then
+		wget "https://dl.52ll.org/node.sh";chmod 777 node.sh
+	else
+		echo "node.sh 已存在."
+	fi
+}
+
+GET_NODE_SH_FILE(){
+	if [ ! -f /root/node.sh ];then
+		wget "https://dl.52ll.org/node.sh";chmod 777 node.sh
+	else
+		echo "node.sh 已存在."
+	fi
+}
 
 Install_v2ray(){
 	bash <(curl -s -L https://git.io/v2ray.sh)
@@ -117,7 +124,6 @@ echo "####################################################################
 # [v] [V2ray一键脚本-https://233now.com/post/1/]                   #
 # [s] [SS(R)一键脚本-https://github.com/yyyyy1412/doubi#ssrsh]     # 
 ####################################################################
-# [g]更新脚本 [x]卸载脚本 
 # ${SERVER_IP_INFO}
 ####################################################################"
 read -p "PLEASE SELECT OPTIONS:" SSR_OPTIONS
@@ -143,10 +149,6 @@ clear;case "${SSR_OPTIONS}" in
 	Install_v2ray;;
 	s)
 	Install_ssr;;
-	g)
-	REINSTALL;;
-	x)
-	UNINSTALL;;
 	node)
 	GET_NODE_SH_FILE;;
 	*)
