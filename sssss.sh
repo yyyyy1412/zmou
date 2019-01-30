@@ -66,7 +66,7 @@ GET_SERVER_IP(){
 
 INSTALL(){
 	if [ ! -f /usr/bin/ssr ];then
-		bash ssr.sh
+		bash sssss.sh
 	fi
 }
 
