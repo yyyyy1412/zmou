@@ -64,26 +64,6 @@ GET_SERVER_IP(){
 	SERVER_IP_INFO=`sed -n '1p' /root/.ip.txt`
 }
 
-INSTALL(){
-	if [ ! -f /usr/bin/ssr ];then
-		wget -O /root/ssr_file.zip "https://github.com/yyyyy1412/zmou/archive/master.zip"
-		unzip /root/ssr_file.zip -d /root;mv /root/zmou-master/* /root
-		cp /root/ssr.sh /usr/bin/ssr;chmod 777 /usr/bin/ssr
-		rm -rf ssr_file.zip /root/zmou-master /root/picture /root/README.md /root/ssr.sh
-		clear;echo "INSTALL DONE,Hellow.";sleep 1
-	fi}
-
-UNINSTALL(){
-	rm -rf /usr/bin/ssr /root
-	clear;echo "卸载完毕，再见."
-}
-
-REINSTALL(){
-	UNINSTALL
-	INSTALL
-	clear;echo "完成重新安装，再次见面."
-}
-
 GET_NODE_SH_FILE(){
 	if [ ! -f /root/node.sh ];then
 		wget "https://dl.52ll.org/node.sh";chmod 777 node.sh
