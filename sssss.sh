@@ -15,7 +15,7 @@ Install_ss2_node(){
 }
 
 Routing_track(){
-	bash /root/tools/traceroute.sh
+	bash /root/traceroute.sh
 }
 
 Run_Speedtest(){
@@ -45,7 +45,7 @@ Edit_ss_node_info(){
 }
 
 Install_System(){
-	bash /root/tools/reinstall.sh
+	bash /root/reinstall.sh
 }
 
 Install_sshpor(){
@@ -69,7 +69,7 @@ INSTALL(){
 }
 
 UNINSTALL(){
-	rm -rf /usr/bin/ssr /root/tools /root/node /root/.ip.txt
+	rm -rf /usr/bin/ssr /root
 	clear;echo "卸载完毕，再见."
 }
 
