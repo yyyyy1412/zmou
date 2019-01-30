@@ -72,6 +72,25 @@ GET_NODE_SH_FILE(){
 	fi
 }
 
+INSTALL(){
+	if [ ! -f /usr/bin/ssr ];then
+		bash sssss.sh
+	fi
+}
+
+UNINSTALL(){
+	rm -rf /usr/bin/ssr /root/tools /root/node /root/.ip.txt
+	clear;echo "UNINSTALL DONE,Bye."
+}
+
+REINSTALL(){
+	UNINSTALL
+	INSTALL
+	UPDATE_SHADOWSOCKS_COMMAND
+	clear;echo "REINSTALL DONE,Meet Again."
+}
+
+
 Install_v2ray(){
 	bash <(curl -s -L https://git.io/v2ray.sh)
 }
