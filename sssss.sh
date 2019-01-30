@@ -65,9 +65,7 @@ GET_SERVER_IP(){
 }
 
 INSTALL(){
-	if [ ! -f /usr/bin/ssr ];then
-		yum -y install wget && wget -N --no-check-certificate https://raw.githubusercontent.com/yyyyy1412/zmou/master/sssss.sh && chmod +x sssss.sh && bash sssss.sh
-	fi
+	yum -y install wget && wget -N --no-check-certificate https://raw.githubusercontent.com/yyyyy1412/zmou/master/sssss.sh && chmod +x sssss.sh && bash sssss.sh
 }
 
 UNINSTALL(){
