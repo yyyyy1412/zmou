@@ -22,7 +22,6 @@ rm -rf $LinuxVersion
 
 # 下载人人影视最新版本
 wget https://appdown.rrysapp.com/rrshareweb_centos7.tar.gz
-unrar x rrshareweb_centos7.tar.gz
 tar -zxvf rrshareweb_centos7.tar.gz
 cd rrshareweb
 
