@@ -5,5 +5,5 @@ yum -y install git fuse wget curl zip unzip screen gcc-c++ gcc;wget "https://raw
 ```
 Debian
 ```shell
-apt-get -y install git wget vim curl zip unzip screen;wget "https://raw.githubusercontent.com/yyyyy1412/zmou/master/sssss.sh";bash sssss.sh
+apt-get update -y && apt-get install git wget vim curl zip unzip screen -y;wget "https://raw.githubusercontent.com/yyyyy1412/zmou/master/sssss.sh";bash sssss.sh
 ```
