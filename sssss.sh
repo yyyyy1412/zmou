@@ -22,6 +22,10 @@ Install_ss2_node(){
 	yum -y install wget && wget -N --no-check-certificate https://raw.githubusercontent.com/yyyyy1412/zmou/master/ss.sh && chmod +x ss.sh && bash ss.sh
 }
 
+Install_ss3_node(){
+	yum install wget -y && wget https://raw.githubusercontent.com/SuicidalCat/Airport-toolkit/master/ssr_node_c7.sh && chmod +x ssr_node_c7.sh && ./ssr_node_c7.sh
+}
+
 Edit_ss_node_info(){
 	echo "旧设置如下:"
 	sed -n '2p' /root/shadowsocks/userapiconfig.py
@@ -91,9 +95,9 @@ echo "####################################################################
 ####################################################################
 # [1] [锐速BBR合集版-94ish.me]                                     #
 # [2] [节点对接-NimaQu]                                            #
-# [3] [节点对接-备份版]                                            #
-# [4] [节点对接设置]                                               #
-# [5] [路由跟踪]                                                   #
+# [3] [节点对接-大猫猫版]                                            #
+# [4] [节点对接-备份版]                                            #
+# [5] [节点对接设置]                                               #
 # [6] [服务器测速]                                                 #
 # [7] [安装纯净系统]                                               #
 # [8] [修改SSH端口]                                                #
@@ -111,11 +115,11 @@ clear;case "${SSR_OPTIONS}" in
 	2)
 	Install_ss1_node;;
 	3)
-	Install_ss2_node;;
+	Install_ss3_node;;
 	4)
-	Edit_ss_node_info;;
+	Install_ss2_node;;
 	5)
-	Routing_track;;
+	Edit_ss_node_info;;
 	6)
 	Run_Speedtest;;
 	7)
