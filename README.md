@@ -3,3 +3,8 @@ Centos
 ```shell
 yum install wget -y && wget https://raw.githubusercontent.com/yyyyy1412/zmou/master/sssss.sh && chmod +x sssss.sh && ./sssss.sh
 ```
+Debian
+```shell
+apt-get update
+apt-get install curl wget -y && wget https://raw.githubusercontent.com/yyyyy1412/zmou/master/sssss.sh && chmod +x sssss.sh && ./sssss.sh
+```
