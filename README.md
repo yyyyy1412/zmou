@@ -6,5 +6,5 @@ yum install wget -y && wget https://raw.githubusercontent.com/yyyyy1412/zmou/mas
 Debian
 ```shell
 apt-get update
-apt-get install curl wget -y && wget https://raw.githubusercontent.com/yyyyy1412/zmou/master/sssss.sh && chmod +x sssss.sh && ./sssss.sh
+apt-get install curl yum wget -y && wget https://raw.githubusercontent.com/yyyyy1412/zmou/master/sssss.sh && chmod +x sssss.sh && ./sssss.sh
 ```
